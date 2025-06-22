@@ -2,22 +2,56 @@
 <navigation
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/characterFragment">
+    app:startDestination="@id/characterListFragment">
 
     <fragment
-        android:id="@+id/characterFragment"
-        android:name="com.example.ttrpg.CharacterFragment"
-        android:label="Персонаж" />
+        android:id="@+id/characterListFragment"
+        android:name="com.example.ttrpg.CharacterListFragment"
+        android:label="@string/characters"
+        tools:layout="@layout/fragment_character_list">
+
+        <action
+            android:id="@+id/action_characterListFragment_to_characterCreateFragment"
+            app:destination="@id/characterCreateFragment" />
+
+        <action
+            android:id="@+id/action_characterListFragment_to_characterDetailFragment"
+            app:destination="@id/characterDetailFragment">
+            <argument
+                android:name="characterId"
+                app:argType="long" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/characterCreateFragment"
+        android:name="com.example.ttrpg.CharacterCreateFragment"
+        android:label="@string/create_character"
+        tools:layout="@layout/fragment_character_create" />
+
+    <fragment
+        android:id="@+id/characterDetailFragment"
+        android:name="com.example.ttrpg.CharacterDetailFragment"
+        android:label="Character Detail"
+        tools:layout="@layout/fragment_character_detail">
+
+        <argument
+            android:name="characterId"
+            app:argType="long" />
+    </fragment>
 
     <fragment
         android:id="@+id/diceFragment"
         android:name="com.example.ttrpg.DiceFragment"
-        android:label="Кубики" />
+        android:label="@string/dice"
+        tools:layout="@layout/fragment_dice" />
 
     <fragment
         android:id="@+id/moreFragment"
         android:name="com.example.ttrpg.MoreFragment"
-        android:label="Дополнительно" />
+        android:label="@string/more"
+        tools:layout="@layout/fragment_more" />
 
 </navigation>

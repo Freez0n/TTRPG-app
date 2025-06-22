@@ -1,18 +1,23 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/characterFragment"
+        android:id="@+id/characterListFragment"
         android:icon="@drawable/ic_character"
-        android:title="Персонаж" />
+        android:title="@string/characters"
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/diceFragment"
         android:icon="@drawable/ic_dice"
-        android:title="Кубики" />
+        android:title="@string/dice"
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/moreFragment"
         android:icon="@drawable/ic_more"
-        android:title="Дополнительно" />
+        android:title="@string/more"
+        app:showAsAction="ifRoom" />
 
 </menu>
